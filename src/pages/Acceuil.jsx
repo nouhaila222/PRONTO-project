@@ -80,7 +80,6 @@ const Accueil = () => {
     <div className="font-poppins">
       <Navbar />
 
-      {/* Hero Section */}
       <div className="relative w-full h-[400px] md:h-[500px] lg:h-[550px] overflow-hidden">
         <img
           src={bg1}
@@ -88,7 +87,7 @@ const Accueil = () => {
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 flex flex-col md:flex-row justify-between items-center px-6 md:px-16 lg:px-24">
-          {/* Left Text Section */}
+      
           <div className="max-w-lg text-left">
             <h3 className="text-blue-600 font-semibold text-lg">#WeekendDeals</h3>
             <h1 className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight">
@@ -101,7 +100,7 @@ const Accueil = () => {
         </div>
       </div>
 
-      {/* Features Section */}
+    
       <div className="flex flex-wrap md:flex-nowrap justify-between items-center mr-10 ml-10 space-x-8">
         <div className="flex items-center space-x-2">
           <img src={delivery} alt="free shipping" className="w-10 h-10" />
@@ -124,7 +123,7 @@ const Accueil = () => {
         </div>
       </div>
 
-      {/* Trending Products Section */}
+      
       <section>
         <div>
           <h2 className="font-bold ml-20 mt-20 mb-10 text-2xl">Trending Proudcts</h2>
@@ -138,9 +137,11 @@ const Accueil = () => {
               <p className="text-center">sale</p>
             </div>
 
+            {/* images */}
             <img src={product.image} alt={product.name} className="w-[160px] border border-black ml-3">
             </img>
 
+            {/* info */}
             <h4 className="text-xs text-gray-600 ml-2">{product.category}</h4>
             <p className="text-xs font-bold ml-2">{product.name}</p>
           </div>)

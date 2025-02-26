@@ -9,22 +9,18 @@ import { CiMenuBurger } from "react-icons/ci";
 export default function Navbar() {
   return (
     <div>
-      {/* Top Navbar (Fixed at the top) */}
+     
       <nav className="bg-white shadow-md p-4 flex justify-between items-center h-20 fixed top-0 left-0 w-full z-50">
-        {/* Logo */}
+
         <img className="h-16 w-[180px] ml-16" src={logo} alt="Pronto Tech Logo" />
 
-        {/* Search Bar */}
+      
         <div className="flex items-center border px-4 py-2 rounded-full w-[500px]">
           <IoSearchOutline className="text-gray-500 mr-2 text-m" />
-          <input
-            type="text"
-            placeholder="Search a product"
-            className="h-5 outline-none"
-          />
+          <input type="text" placeholder="Search a product" className="h-5 outline-none"/>
         </div>
 
-        {/* Icons */}
+        
         <div className="flex space-x-4 mr-16">
           <button className="text-gray-700 text-3xl"><TiShoppingCart /></button>
           <button className="text-gray-700 text-3xl"><MdOutlineFavoriteBorder /></button>
