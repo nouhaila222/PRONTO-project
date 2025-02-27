@@ -78,8 +78,6 @@ const products = [
 const Accueil = () => {
   return (
     <div className="font-poppins">
-      <Navbar />
-
       <div className="relative w-full h-[400px] md:h-[500px] lg:h-[550px] overflow-hidden">
         <img
           src={bg1}

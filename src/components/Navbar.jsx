@@ -5,14 +5,15 @@ import { TiShoppingCart } from "react-icons/ti";
 import { MdOutlineFavoriteBorder } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { CiMenuBurger } from "react-icons/ci";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <div>
+    <div className="">
      
       <nav className="bg-white shadow-md p-4 flex justify-between items-center h-20 fixed top-0 left-0 w-full z-50">
 
-        <img className="h-16 w-[180px] ml-16" src={logo} alt="Pronto Tech Logo" />
+        <img className="h-16 w-[180px]  ml-16" src={logo} alt="Pronto Tech Logo" />
 
       
         <div className="flex items-center border px-4 py-2 rounded-full w-[500px]">
@@ -22,7 +23,7 @@ export default function Navbar() {
 
         
         <div className="flex space-x-4 mr-16">
-          <button className="text-gray-700 text-3xl"><TiShoppingCart /></button>
+          <Link to={'/panier'} className="text-gray-700 text-3xl"><TiShoppingCart /></Link>
           <button className="text-gray-700 text-3xl"><MdOutlineFavoriteBorder /></button>
           <button className="text-gray-700 text-3xl"><CgProfile /></button>
         </div>
