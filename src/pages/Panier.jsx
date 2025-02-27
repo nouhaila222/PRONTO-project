@@ -13,7 +13,7 @@ const CartResume = ({ RealTotal }) => {
                     Sous-total
                 </span>
                 <h1 className="font-bold text-xl text-center">
-                    {RealTotal} MAD
+                    {Math.floor(RealTotal)} MAD
                 </h1>
             </div>
 
@@ -44,7 +44,7 @@ const CartResume = ({ RealTotal }) => {
 
 
 const CartProduct = ({ prod, onQtChage, onDelete }) => {
-    const [quantite, setQantite] = useState(prod.stock)
+    const [quantite, setQantite] = useState(Math.floor(Math.random()*10 +1))
     const handelChangeQ = (t) => {
 
         if (t) {
@@ -110,6 +110,8 @@ const Panier = () => {
         resp.data.products.map(p => {
             setObjectTotalCost(cur => ({ ...cur, id: { id: p.id, total: p.price * p.stock } }))
         })
+        console.log(resp.data.products);
+        
         setProducts(resp.data.products)
         setLoding(false)
     }

@@ -1,6 +1,8 @@
 @import "tailwindcss";
+*{
+  transition: .1s;
+}
 
-  
   body {
     background-color: var(--bg-third);
   }
@@ -262,3 +264,39 @@
     object-fit: cover;
     object-position: top;
   }
+
+  .dots {
+    width: 85.1px;
+    height: 13.4px;
+    display: flex;
+    opacity: .7;
+ }
+ 
+ .dots:before,
+ .dots:after {
+    content: "";
+    flex: 1;
+    background: radial-gradient(farthest-side         ,var(--bg-secondary) 90%,#0000) center/13.4px 100%,
+         radial-gradient(farthest-side at right,var(--bg-secondary) 90%,#0000) right /6.7px  100%;
+    background-repeat: no-repeat;
+    transform: scale(var(--s,1)) translate(0px) rotate(0);
+    animation: dots-31zaijmd 2s infinite;
+ }
+ 
+ .dots:after {
+    --s: -1;
+ }
+ 
+ @keyframes dots-31zaijmd {
+    25% {
+       transform: scale(var(--s,1)) translate(-11.2px) rotate(0);
+    }
+ 
+    50% {
+       transform: scale(var(--s,1)) translate(-11.2px) rotate(1turn);
+    }
+ 
+    75%, 100% {
+       transform: scale(var(--s,1)) translate(0px)   rotate(1turn);
+    }
+ }

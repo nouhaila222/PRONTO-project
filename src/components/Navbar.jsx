@@ -10,22 +10,29 @@ import { Link } from "react-router-dom";
 export default function Navbar() {
   return (
     <div className="">
-     
+
       <nav className="bg-white shadow-md p-4 flex justify-between items-center h-20 fixed top-0 left-0 w-full z-50">
+        <Link to={'/'}>
+          <img className="h-16 w-[180px]  ml-16" src={logo} alt="Pronto Tech Logo" />
+        </Link>
 
-        <img className="h-16 w-[180px]  ml-16" src={logo} alt="Pronto Tech Logo" />
 
-      
-        <div className="flex items-center border px-4 py-2 rounded-full w-[500px]">
+        <div className="flex items-center border border-gray-300 px-4 py-1 rounded-full w-[500px]">
           <IoSearchOutline className="text-gray-500 mr-2 text-m" />
-          <input type="text" placeholder="Search a product" className="h-5 outline-none"/>
+          <input type="text" placeholder="Search a product" className="h-5 outline-none text-sm" />
         </div>
 
-        
+
         <div className="flex space-x-4 mr-16">
-          <Link to={'/panier'} className="text-gray-700 text-3xl"><TiShoppingCart /></Link>
-          <button className="text-gray-700 text-3xl"><MdOutlineFavoriteBorder /></button>
-          <button className="text-gray-700 text-3xl"><CgProfile /></button>
+          <Link to={'/panier'} className="group hover:border-blue-300  border p-2 rounded-xl border-gray-300  text-ms mr-8 r-c-c "><TiShoppingCart  className="group-hover:text-blue-600"  />
+            <p className=" opacity-70 font-semibold text-sm ml-1 group-hover:text-blue-600">Panier</p>
+          </Link>
+          <Link to={'/favories'} className="group hover:border-blue-300  border p-2 rounded-xl border-gray-300  text-ms r-c-c  mr-8"><MdOutlineFavoriteBorder className="group-hover:text-blue-600"  />
+            <p className=" opacity-70 font-semibold text-sm ml-1 group-hover:text-blue-600">Favories</p>
+          </Link>
+          <Link className="group hover:border-blue-300  border p-2 rounded-xl border-gray-300  text-ms r-c-c "><CgProfile  className="group-hover:text-blue-600" />
+            <p className=" opacity-70 font-semibold text-sm ml-1 group-hover:text-blue-600">Profile</p>
+          </Link>
         </div>
       </nav>
 
