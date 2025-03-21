@@ -7,15 +7,28 @@ import { GrFavorite } from "react-icons/gr";
 
 export default function Smartphone() {
   const [products, setProducts] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch("http://localhost:3000/products")
-      .then(response => response.json())
-      .then(data => {
-        console.log("Fetched data:", data);  // Ajoute cette ligne pour voir ce que l'API renvoie
-        setProducts(data.products);  // Accède bien à "products"
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to fetch products.");
+        }
+        return response.json();
       })
-      .catch(error => console.error("Error loading products:", error));
+      .then((data) => {
+        console.log("Fetched data:", data);  // Ajoute cette ligne pour voir ce que l'API renvoie
+        const productsArray = Array.isArray(data) ? data : data.products || [];
+        setProducts(productsArray);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error loading products:", error);
+        setError(error.message);
+        setLoading(false);
+      });
   }, []);
 
   return (
@@ -40,60 +53,74 @@ export default function Smartphone() {
 
         {/* Liste des produits */}
         <div className="flex flex-row gap-4 ml-4">
-          {products.map((product) => (
-            <div key={product.id} className="bg-white w-[220px] shadow-md rounded-lg p-4 relative">
-              
-              {/* Bouton Favori */}
-              <GrFavorite className="text-gray-500 hover:text-red-500 hover:scale-125 transition-all duration-300 cursor-pointer absolute top-3 right-3 w-6 h-6" />
-              
-              {/* Badge Sale */}
-              {product.discountedPrice !== product.originalPrice && (
-                <div className="absolute top-2 left-2 bg-red-600 text-white text-xs rounded-full px-2">
-                  Sale
-                </div>
-              )}
-
-              {/* Image du produit */}
-              <img src={product.image} alt={product.name} className="w-[160px] h-[160px] mx-auto" />
-
-              {/* Informations */}
-              <h4 className="text-xs text-gray-600 text-center">{product.category}</h4>
-              <p className="text-sm font-bold text-center h-14 flex items-center justify-center">
-                {product.title}
-              </p>
-
-              {/* Étoiles et avis */}
-              <div className="text-yellow-400 flex justify-center items-center mt-2">
-                {"★".repeat(Math.round(product.rating))}
-                {"☆".repeat(5 - Math.round(product.rating))}
-              </div>
-              {/* <p className="text-gray-500 text-xs text-center mt-1">{product.stock} in stock</p> */}
-
-              {/* Prix */}
-              <div className="flex justify-center items-center space-x-2 mt-2">
-                <IoPricetags className="text-[#011C3D] text-lg" />
-                {product.discountedPrice !== product.originalPrice ? (
-                  <>
-                    <span className="text-gray-500 line-through text-sm">${product.originalPrice}</span>
-                    <span className="text-[#011C3D] font-medium text-lg">${product.discountedPrice}</span>
-                  </>
-                ) : (
-                  <span className="text-[#011C3D] font-medium text-lg">${product.originalPrice}</span>
+          {loading ? (
+            <p className="text-center">Loading...</p>
+          ) : error ? (
+            <p className="text-red-500 text-center">Error: {error}</p>
+          ) : products && Array.isArray(products) && products.length > 0 ? (
+            products.map((product) => (
+              <div key={product.id} className="bg-white w-[220px] shadow-md rounded-lg p-4 relative">
+                
+                {/* Bouton Favori */}
+                <GrFavorite className="text-gray-500 hover:text-red-500 hover:scale-125 transition-all duration-300 cursor-pointer absolute top-3 right-3 w-6 h-6" />
+                
+                {/* Badge Sale */}
+                {product.discountedPrice !== product.originalPrice && (
+                  <div className="absolute top-2 left-2 bg-red-600 text-white text-xs rounded-full px-2">
+                    Sale
+                  </div>
                 )}
-              </div>
 
-              {/* Boutons Actions */}
-              <div className="flex flex-row justify-center items-center space-x-2 mt-3">
-                <button className="border border-gray-400 rounded-sm font-normal text-xs flex flex-row items-center px-3 py-1 hover:bg-gray-100">
-                  <GoGitCompare className="mr-1" /> Compare
-                </button>
-                <button className="bg-blue-500 text-white font-normal text-xs flex flex-row items-center px-3 py-1 rounded-sm hover:bg-blue-600">
-                  Add to Cart <TbShoppingCartPlus className="ml-1" />
-                </button>
-              </div>
+                {/* Image du produit */}
+                <img
+                  src={product.image || "fallback-image.jpg"}
+                  alt={product.name}
+                  className="w-[160px] h-[160px] mx-auto"
+                  onError={(e) => {
+                    e.target.src = "fallback-image.jpg"; // استبدال الصورة في حالة الخطأ
+                  }}
+                />
 
-            </div>
-          ))}
+                {/* Informations */}
+                <h4 className="text-xs text-gray-600 text-center">{product.category}</h4>
+                <p className="text-sm font-bold text-center h-14 flex items-center justify-center">
+                  {product.title}
+                </p>
+
+                {/* Étoiles et avis */}
+                <div className="text-yellow-400 flex justify-center items-center mt-2">
+                  {"★".repeat(Math.round(product.rating || 0))}
+                  {"☆".repeat(5 - Math.round(product.rating || 0))}
+                </div>
+
+                {/* Prix */}
+                <div className="flex justify-center items-center space-x-2 mt-2">
+                  <IoPricetags className="text-[#011C3D] text-lg" />
+                  {product.discountedPrice !== product.originalPrice ? (
+                    <>
+                      <span className="text-gray-500 line-through text-sm">${product.originalPrice}</span>
+                      <span className="text-[#011C3D] font-medium text-lg">${product.discountedPrice}</span>
+                    </>
+                  ) : (
+                    <span className="text-[#011C3D] font-medium text-lg">${product.originalPrice}</span>
+                  )}
+                </div>
+
+                {/* Boutons Actions */}
+                <div className="flex flex-row justify-center items-center space-x-2 mt-3">
+                  <button className="border border-gray-400 rounded-sm font-normal text-xs flex flex-row items-center px-3 py-1 hover:bg-gray-100">
+                    <GoGitCompare className="mr-1" /> Compare
+                  </button>
+                  <button className="bg-blue-500 text-white font-normal text-xs flex flex-row items-center px-3 py-1 rounded-sm hover:bg-blue-600">
+                    Add to Cart <TbShoppingCartPlus className="ml-1" />
+                  </button>
+                </div>
+
+              </div>
+            ))
+          ) : (
+            <p className="text-center">No products found.</p>
+          )}
         </div>
 
       </section>
