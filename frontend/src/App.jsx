@@ -1,6 +1,6 @@
 import React from "react";
 import { RouterProvider } from "react-router-dom";
-import router from "./layout/routes"; // Vérifie le chemin exact
+import router from "./layout/routes"; 
 
 function App() {
   <>

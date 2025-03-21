@@ -15,7 +15,7 @@ const Layout = () => {
                 <Outlet />
             </div>
 
-            {/* Footer should be at the bottom */}
+            
             <Footer />
         </div>
     );

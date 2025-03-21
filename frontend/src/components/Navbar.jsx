@@ -9,7 +9,6 @@ import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
-<<<<<<< HEAD:src/components/Navbar.jsx
     <div className="">
 
       <nav className="bg-white shadow-md p-4 flex justify-between items-center h-20 fixed top-0 left-0 w-full z-50">
@@ -21,24 +20,10 @@ export default function Navbar() {
         <div className="flex items-center border border-gray-300 px-4 py-1 rounded-full w-[500px]">
           <IoSearchOutline className="text-gray-500 mr-2 text-m" />
           <input type="text" placeholder="Search a product" className="h-5 outline-none text-sm" />
-=======
-    <div>
-     
-      <nav className="bg-white shadow-md p-4 flex justify-between items-center h-16 fixed top-0 left-0 w-full z-50">
-
-        <Link to={'/'}>
-          <img className="h-16 w-[180px]  ml-16" src={logo} alt="Pronto Tech Logo" />
-        </Link>
-      
-        <div className="flex items-center border border-gray-400 px-4 py-2 rounded-full w-[500px] h-8">
-          <IoSearchOutline className="text-gray-500 mr-2 text-m" />
-          <input type="text" placeholder="Search a product" className="h-4 outline-none"/>
->>>>>>> 0d5bc495 (apii):frontend/src/components/Navbar.jsx
         </div>
 
 
         <div className="flex space-x-4 mr-16">
-<<<<<<< HEAD:src/components/Navbar.jsx
           <Link to={'/panier'} className="group hover:border-blue-300  border p-2 rounded-xl border-gray-300  text-ms mr-8 r-c-c "><TiShoppingCart  className="group-hover:text-blue-600"  />
             <p className=" opacity-70 font-semibold text-sm ml-1 group-hover:text-blue-600">Panier</p>
           </Link>
@@ -48,17 +33,6 @@ export default function Navbar() {
           <Link className="group hover:border-blue-300  border p-2 rounded-xl border-gray-300  text-ms r-c-c "><CgProfile  className="group-hover:text-blue-600" />
             <p className=" opacity-70 font-semibold text-sm ml-1 group-hover:text-blue-600">Profile</p>
           </Link>
-=======
-        <Link to={'/panier'} className="text-gray-700 text-3xl mr-8 r-c-c "><TiShoppingCart  className="group-hover:text-blue-600"  />
-          </Link>
-          <Link to={'/favories'} className="text-gray-700 text-3xl text-ms r-c-c  mr-8"><MdOutlineFavoriteBorder className="group-hover:text-blue-600"  />
-          </Link>
-          <Link className="text-gray-700 text-3xl text-ms r-c-c "><CgProfile  className="group-hover:text-blue-600" />
-          </Link>
-          {/* <button className="text-gray-700 text-3xl"><TiShoppingCart /></button> */}
-          {/* <button className="text-gray-700 text-3xl"><MdOutlineFavoriteBorder /></button>
-          <button className="text-gray-700 text-3xl"><CgProfile /></button> */}
->>>>>>> 0d5bc495 (apii):frontend/src/components/Navbar.jsx
         </div>
       </nav>
 

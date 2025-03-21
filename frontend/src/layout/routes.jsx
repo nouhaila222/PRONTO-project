@@ -2,12 +2,12 @@ import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 import Accueil from "../pages/Acceuil";
 import Panier from "../pages/Panier"
-import Layout from "../layout/Layout"; // Assure-toi que ce composant inclut Navbar & Footer
+import Layout from "../layout/Layout"; 
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />, // Le Layout inclut Navbar & Footer
+    element: <Layout />, 
     children: [
       {
         path: "/",
