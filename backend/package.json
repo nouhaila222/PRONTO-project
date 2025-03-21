@@ -1,0 +1,75 @@
+{
+  "name": "prontoproject",
+  "version": "0.0.0",
+<<<<<<< HEAD:package.json
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port=3000 ",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+=======
+  "private": true,
+  "description": "api rest avec node js",
+  "homepage": "https://github.com/nouhaila222/PRONTO-project#readme",
+  "bugs": {
+    "url": "https://github.com/nouhaila222/PRONTO-project/issues"
+>>>>>>> 0d5bc495 (apii):backend/package.json
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nouhaila222/PRONTO-project.git"
+  },
+  "license": "ISC",
+  "author": "Elmaksoub Nouhaila",
+  "type": "module",
+  "main": "server.js",
+ "scripts": {
+  "dev": "nodemon server.js",
+  "start": "node server.js",
+  "build": "vite build",
+  "lint": "eslint .",
+  "preview": "vite preview"
+},
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "@fortawesome/free-regular-svg-icons": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@tailwindcss/vite": "^4.0.8",
+<<<<<<< HEAD:package.json
+    "axios": "^1.8.1",
+=======
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "json-server": "^0.17.4",
+    "lottie-react": "^2.4.1",
+    "lucide-react": "^0.477.0",
+    "nodemon": "^3.1.9",
+>>>>>>> 0d5bc495 (apii):backend/package.json
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-icons": "^5.5.0",
+    "react-lottie": "^1.2.10",
+<<<<<<< HEAD:package.json
+    "react-router-dom": "^7.2.0",
+=======
+    "react-router-dom": "^7.3.0",
+    "tailwind-scrollbar-hide": "^2.0.0",
+>>>>>>> 0d5bc495 (apii):backend/package.json
+    "tailwindcss": "^4.0.8"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.19.0",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.19.0",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.18",
+    "globals": "^15.14.0",
+    "vite": "^6.1.0"
+  }
+}

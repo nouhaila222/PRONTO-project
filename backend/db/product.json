@@ -1,0 +1,142 @@
+
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Apple iPhone 16 Pro, 512GB", 
+            "image": "prontoImages/Iphon16.jpeg", 
+            "originalPrice": "$630.00",
+            "discountedPrice": "$400.00",
+            "sale": true,
+            "rating": 4 ,
+            "category":"Smartphone",
+            "review":"+6k reviews"
+        },
+        { 
+            "id": 2, 
+            "name": "Galaxy A15 5G A Series", 
+            "image": "prontoImages/A15.jpeg", 
+            "originalPrice": "$325.00", 
+            "discountedPrice": "$300.00", 
+            "sale": true, 
+            "rating": 3 ,
+            "category":"smartphone",
+            "review":"+3k reviews"
+    },
+        { 
+            "id": 3, 
+            "name": "Apple Watch Series 9", 
+            "image": "prontoImages/img5 (2).png", 
+            "originalPrice": "$500.00", 
+            "discountedPrice": "$450.00", 
+            "sale": true, 
+            "rating": 5,
+            "category":"SmartWatch",
+            "intro":"A powerful smartwatch with health monitoring and advanced connectivity.",
+            "review":"+10k reviews"
+    },
+        { 
+            "id": 4, 
+            "name": "Galaxy A14 5G A Series", 
+            "image": "prontoImages/A14.jpeg", 
+            "originalPrice": "$415.00", 
+            "discountedPrice": "$415.00", 
+            "sale": false, 
+            "rating": 3,
+            "category":"Smartphone",
+            "review":"+4k reviews"
+    },
+        { 
+            "id": 5, 
+            "name": "PC Gamer Asus Rog Strix", 
+            "image": "prontoImages/img1.png", 
+            "originalPrice": "$450.00", 
+            "discountedPrice": "$410.00", 
+            "sale": true, 
+            "rating": 3 ,
+            "category":"PC Gamer",
+            "intro": "A powerful gaming PC with top performance for demanding gamers.",
+            "review":"+7k reviews"
+    },
+        { 
+            "id": 6, 
+            "name": "Gamer Xtreme VR Gaming PC", 
+            "image": "prontoImages/img2 (2)", 
+            "originalPrice": "$325.00", 
+            "discountedPrice": "$300.00", 
+            "sale": true, 
+            "rating": 4 ,
+            "category":"PC Gamer",
+            "intro":"A PC designed for virtual reality and high-performance gaming.",
+            "review":"+9k reviews"
+    },
+        { 
+            "id": 7,
+            "name": "Ultra U23 5G Bestseller", 
+            "image": "prontoImages/U23.jpeg", 
+            "originalPrice": "$475.00", 
+            "discountedPrice": "$475.00", 
+            "sale": false, 
+            "rating": 5 ,
+            "category":"Smartphone",
+            "review":"+11k reviews"
+        },
+        { 
+            "id": 8, 
+            "name": "Gaming Headset With Mic", 
+            "image": "prontoImages/img3 (2).jpeg", 
+            "originalPrice": "$250.00", 
+            "discountedPrice": "$225.00", 
+            "sale": true, 
+            "rating": 4,
+            "category":"Headest",
+            "intro":"A gaming headset with a built-in microphone for immersive sound and clear communication.",
+            "review":"+6k reviews"
+        },
+        { 
+            "id": 9, 
+            "name": "Gaming Keyboard + Mouse", 
+            "image": "prontoImages/img4 (2).jpeg", 
+            "originalPrice": "$120.00", 
+            "discountedPrice": "$80.00", 
+            "sale": true, 
+            "rating": 4,
+            "category":"Keyborad",
+            "intro":"A gaming keyboard and mouse combo with RGB lighting and responsive keys.",
+            "review":"+6k reviews"
+        },
+        {
+            "id": 10, 
+            "name": "Hp printer", 
+            "image": "prontoImages/img6 (2).png", 
+            "originalPrice": "$300.00", 
+            "discountedPrice": "$220.00", 
+            "sale": true, 
+            "rating": 2 ,
+            "category":"Printer",
+            "review":"+2k reviews"
+    },
+        { 
+            "id": 11, 
+            "name": "Sony ALPHA 7", 
+            "image": "prontoImages/camera.jpeg", 
+            "originalPrice": "$650.00", 
+            "discountedPrice": "$520.00", 
+            "sale": true, 
+            "rating": 5 ,
+            "category":"Camer",
+            "review":"+12k reviews"
+    },
+        { 
+            "id": 12, 
+            "name": "iPad Pro 11 inch", 
+            "image": "prontoImages/ipad.jpeg", 
+            "originalPrice": "$720.00", 
+            "discountedPrice": "$610.00", 
+            "sale": true, 
+            "rating": 5 ,
+            "category":"Ipad",
+            "review":"+2k reviews"
+    }
+    ]
+    }
